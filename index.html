@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="check weekly weather in metric and imperial ways">
+    <meta name="og:title" content="Weekly weather search worldwidely">
+    <meta name="og:description" content="check the weather worldwide in both metric and imperial ways">
+    <title>Weather app</title>
+    <link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="plugin/share/jssocials-1.4.0/dist/jssocials.css">
+    <link rel="stylesheet" href="plugin/share/jssocials-1.4.0/dist/jssocials-theme-classic.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js"
+        integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH"
+        crossorigin="anonymous"></script>
+
+    <!-- Start WOWSlider.com HEAD section -->
+    <link rel="stylesheet" type="text/css" href="engine1/style.css" />
+    <script type="text/javascript" src="engine1/jquery.js"></script>
+    <!-- End WOWSlider.com HEAD section -->
+
+</head>
+
+<body>
+    <div class="loadingContainer">
+        <div class="loading"><img src="imgs/Spinner-1s-200px.gif"></div>
+    </div>
+
+    <div id="share"></div>
+
+    <div class="container">
+        <div class="searchContainer">
+            <div class="searchMain">
+                <div class="searchLeft">
+                    <input class="searchControl" type="text" name="searchInput" id="searchInput"
+                        placeholder="City Name">
+                    <button class="searchControl" type="submit" id="searchSubmit"><img src="imgs/search.png">
+                        <!--<svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" stroke="white"
+                        fill="white">
+                        <path
+                            d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                        </path>
+                    </svg>-->
+                    </button>
+                </div>
+                <div class="imperialContainer">
+                    <span class="imperial">imperial</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="weatherContainer">
+            <hr>
+            <div class="weatherMain">
+                <div id="regionCountry">
+                    <span id="region">region</span>,
+                    <span id="country">country</span>&nbsp;
+                    <span>
+                        <img id="flags" src="">
+                    </span>
+                </div>
+                </br>
+
+                <div id="weatherDetails">
+                    <div><img src="" alt="" id="weatherIcon"></div>
+                    <div id="temperature"><span id="temperature_c"></span><span id="temperature_f"></span></div>
+                    <span id="weatherType">weatherType</span>
+                </div>
+                </br>
+                <div class="bottomDetails">Wind Speed: <span id="windSpeed_kph"></span><span id="windSpeed_mph"></span>
+                </div>
+                <div class="bottomDetails">Humidity: <span id="humidity">humidityLevel</span></div>
+                <div class="bottomDetails">UV: <span id="uv">uvLevel</span></div>
+                <br>
+                <div class="bottomDetails localTime">Local Time: <span id="localTime">localTime</span></div></br></br>
+                <div class="forecast">
+                    <div class="forecastItem forecastItem_hover" id="day0">
+                        <span class="forecastItemContent date"></span>
+                        <span class="forecastItemContent forecastWeatherTypeIcon"><img src=""></span>
+                        <div class="forecastItemContent tempRange">
+                            <div class="forecast_c">
+                                <span class="forecastMin_c"></span> ~ <span class="forecastMax_c"></span>
+                            </div>
+                            <div class="forecast_f">
+                                <span class="forecastMin_f"></span> ~ <span class="forecastMax_f"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="forecastItem forecastItem_hover" id="day1">
+                        <span class="forecastItemContent date"></span>
+                        <span class="forecastItemContent forecastWeatherTypeIcon"><img src=""></span>
+                        <div class="forecastItemContent tempRange">
+                            <div class="forecast_c">
+                                <span class="forecastMin_c"></span> ~ <span class="forecastMax_c"></span>
+                            </div>
+                            <div class="forecast_f">
+                                <span class="forecastMin_f"></span> ~ <span class="forecastMax_f"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="forecastItem forecastItem_hover" id="day2">
+                        <span class="forecastItemContent date"></span>
+                        <span class="forecastItemContent forecastWeatherTypeIcon"><img src=""></span>
+                        <div class="forecastItemContent tempRange">
+                            <div class="forecast_c">
+                                <span class="forecastMin_c"></span> ~ <span class="forecastMax_c"></span>
+                            </div>
+                            <div class="forecast_f">
+                                <span class="forecastMin_f"></span> ~ <span class="forecastMax_f"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="forecastItem forecastItem_hover" id="day3">
+                        <span class="forecastItemContent date"></span>
+                        <span class="forecastItemContent forecastWeatherTypeIcon"><img src=""></span>
+                        <div class="forecastItemContent tempRange">
+                            <div class="forecast_c">
+                                <span class="forecastMin_c"></span> ~ <span class="forecastMax_c"></span>
+                            </div>
+                            <div class="forecast_f">
+                                <span class="forecastMin_f"></span> ~ <span class="forecastMax_f"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="forecastItem forecastItem_hover" id="day4">
+                        <span class="forecastItemContent date"></span>
+                        <span class="forecastItemContent forecastWeatherTypeIcon"><img src=""></span>
+                        <div class="forecastItemContent tempRange">
+                            <div class="forecast_c">
+                                <span class="forecastMin_c"></span> ~ <span class="forecastMax_c"></span>
+                            </div>
+                            <div class="forecast_f">
+                                <span class="forecastMin_f"></span> ~ <span class="forecastMax_f"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="forecastItem forecastItem_hover" id="day5">
+                        <span class="forecastItemContent date"></span>
+                        <span class="forecastItemContent forecastWeatherTypeIcon"><img src=""></span>
+                        <div class="forecastItemContent tempRange">
+                            <div class="forecast_c">
+                                <span class="forecastMin_c"></span> ~ <span class="forecastMax_c"></span>
+                            </div>
+                            <div class="forecast_f">
+                                <span class="forecastMin_f"></span> ~ <span class="forecastMax_f"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal">
+        <div class="modalCloseDiv">
+            <span class="modalCloseSpan">X</span>
+        </div>
+
+        <div class="modalContent">
+            <!-- Start WOWSlider.com BODY section -->
+            <div id="wowslider-container1">
+                <div class="ws_images">
+                    <ul>
+                        <li><img src="data1/images/certificatehtml.jpg" alt="certificateHTML" title="certificateHTML"
+                                id="wows1_0" /></li>
+                        <li><a href="http://wowslider.net"><img src="data1/images/certificatejquery.jpg"
+                                    alt="wow slider" title="certificateJQUERY" id="wows1_1" /></a></li>
+                        <li><img src="data1/images/certificatecss.jpg" alt="certificateCSS" title="certificateCSS"
+                                id="wows1_2" /></li>
+                    </ul>
+                </div>
+                <div class="ws_bullets">
+                    <div>
+                        <a href="#" title="certificateHTML"><span><img src="data1/tooltips/certificatehtml.jpg"
+                                    alt="certificateHTML" />1</span></a>
+                        <a href="#" title="certificateJQUERY"><span><img src="data1/tooltips/certificatejquery.jpg"
+                                    alt="certificateJQUERY" />2</span></a>
+                        <a href="#" title="certificateCSS"><span><img src="data1/tooltips/certificatecss.jpg"
+                                    alt="certificateCSS" />3</span></a>
+                    </div>
+                </div>
+                <div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">bootstrap
+                        carousel</a> by WOWSlider.com v8.8</div>
+                <div class="ws_shadow"></div>
+            </div>
+            <script type="text/javascript" src="engine1/wowslider.js"></script>
+            <script type="text/javascript" src="engine1/script.js"></script>
+            <!-- End WOWSlider.com BODY section -->
+            <!-- <div class="up">
+                <div class="arrows">
+                    <button class="arrowLeft">&#10094</button>
+                    <button class="arrowRight">&#10095 </button>
+                </div>
+                <div class="slider"> -->
+            <!--
+                    <li class="sliderImg"><img src="imgs/certificateCSS.jpg" alt="" srcset=""></li>
+                    <li class="sliderImg"><img src="imgs/certificateHTML.jpg" alt="" srcset=""></li>
+                    <li class="sliderImg"><img src="imgs/certificateJQUERY.jpg" alt="" srcset=""></li>
+                    -->
+            <!-- <img class="sliderImg" src="imgs/certificateCSS.jpg" alt="" srcset="">
+                    <img class="sliderImg" src="imgs/certificateHTML.jpg" alt="" srcset="">
+                    <img class="sliderImg" src="imgs/certificateJQUERY.jpg" alt="" srcset="">
+                </div> -->
+        </div>
+        <div class="down">
+            <div class="modalProfile">
+                <img src="imgs/selfie.jpg">
+            </div>
+            <div class="modalMedias">
+                <span class="modalMedia" id="facebook"><img src="imgs/iconFacebook.png"></span>
+                <span class="modalMedia" id="linkedIn"><a target="_blank"
+                        href="https://www.linkedin.com/in/eudora-zheng-245a68114/"><img
+                            src="imgs/iconLinkedIn.png"></a></span>
+                <span class="modalMedia" id="github"><a target="_blank"
+                        href="https://github.com/EudoraNeves?tab=repositories"><img
+                            src="imgs/iconGithub.png"></a></span>
+                <span class="modalMedia" id="wechat"><img src="imgs/IconWechat.png"></span>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="aboutAuthor">
+        <button type="submit">About author</button>
+    </div>
+    <!--  
+    <footer>
+        <div class="authorInfo">
+                <div class="profilePic"><a href="#"><img src="imgs/Filipe.jpg"></a></div>
+                <div class="media">
+                <span class="facebook"><img src="imgs/iconFacebook1.png"></span>
+                <span class="linkedIn"><a target = "_blank" href = "https://www.linkedin.com/in/eudora-zheng-245a68114/"><img src="imgs/iconLinkedIn1.png"></a></span>
+                <span class="github"><a target = "_blank" href = "https://github.com/EudoraNeves?tab=repositories"><img src="imgs/github.jpg"></a></span>
+                <span class="wechat"><img src="imgs/IconWechat1.png"></span>
+            </div>
+        </div>
+        <div class="copyRight"></div>
+    </footer>
+    -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="plugin/share/jssocials-1.4.0/dist/jssocials.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
