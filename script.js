@@ -8,9 +8,9 @@ $(document).ready(() => {
         console.log("Geolocation not available!");
     }*/
 
-    $("#share").jsSocials({
-        shares: ["email", "twitter", "facebook", "googleplus", "linkedin", "pinterest", "stumbleupon", "whatsapp"]
-    });
+//     $("#share").jsSocials({
+//         shares: ["email", "twitter", "facebook", "googleplus", "linkedin", "pinterest", "stumbleupon", "whatsapp"]
+//     });
 
     function doSearch() {
         $(".loadingContainer").css("display", "block");
